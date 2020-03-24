@@ -119,4 +119,6 @@ public class DBConnection {
    
    /*
     * commit 합니다,.*/
+   /*commit 다시 */
+   
 }
