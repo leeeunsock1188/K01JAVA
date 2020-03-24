@@ -116,4 +116,7 @@ public class DBConnection {
          System.out.println("연결실패ㅠㅠ");
       }
    }
+   
+   /*
+    * commit 합니다,.*/
 }
