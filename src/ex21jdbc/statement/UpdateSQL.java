@@ -1,0 +1,34 @@
+package ex21jdbc.statement;
+
+import java.sql.SQLException;
+
+public class UpdateSQL extends ConnectDB{
+
+   public UpdateSQL(String user, String pass) {
+      super(user,pass);
+   }
+   @Override
+   void execute() {
+      // TODO Auto-generated method stub
+      try {
+         stmt =con.createStatement();
+         String sql="update member set pass='8888', name='testUpdate', regidate=sysdate where id='test1' ";
+         
+         System.out.println("sql="+sql);
+         
+         int affected= stmt.executeUpdate(sql);
+         
+      System.out.println(affected+"행이 업테이트됨");
+      } catch (SQLException e) {
+         System.out.println("쿼리오류");
+         e.printStackTrace();
+      }catch (Exception e) {
+         System.out.println("알수없는 예외발생");
+         e.printStackTrace();
+      }
+   }
+   public static void main(String[] args) {
+      new UpdateSQL("kosmo", "1234").execute();
+   }
+
+}
